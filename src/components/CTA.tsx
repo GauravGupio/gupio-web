@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import { Download, Phone, Mail } from "lucide-react";
 import playstore_img from "../assets/images/playstore_img.png";
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 
 // Import hero images
 import slide1 from "../assets/images/slide_1.png";

@@ -9,7 +9,7 @@ import mobile_slide_2 from "../../../assets/images/mobile_slide_2.jpg";
 import slider_new_mobile from "../../../assets/images/slider_new_mobile.png";
 import leftSideArrow from "../../../assets/svg/leftSideArrow.svg";
 import rightSideArrow from "../../../assets/svg/rightSideArrow.svg";
-import Button from "../../../components/ui/button";
+import { Button } from "../../../components/ui/button";
 
 const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -118,13 +118,16 @@ const Hero: React.FC = () => {
 
                   <div className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 pt-4 sm:pt-6">
                     <Link to={slide.ctaLink}>
-                      <Button className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold w-auto h-auto min-w-[160px] text-center">
+                      <Button
+                        variant="yellow"
+                        className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold w-auto h-auto min-w-[160px] text-center"
+                      >
                         Book Now
                       </Button>
                     </Link>
                     <Link to="/about">
                       <Button
-                        variant="default"
+                        variant="yellow"
                         className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold w-auto h-auto min-w-[160px] text-center"
                       >
                         Learn More

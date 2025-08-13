@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Car, Shield, Users, Settings, MapPin, Clock } from "lucide-react";
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 
 const Services: React.FC = () => {
   const services = [

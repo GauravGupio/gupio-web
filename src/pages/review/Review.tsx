@@ -34,7 +34,13 @@ const Review: React.FC = () => {
         </h2>
 
         <div className=" mx-auto w-[95%]">
-          <Carousel className="w-full" autoplay={true} autoplayInterval={3000}>
+          <Carousel
+            className="w-full"
+            autoplay={true}
+            autoplayInterval={3000}
+            buttonSize="custom"
+            customButtonSize="w-14 h-14"
+          >
             <CarouselContent>
               {reviewsData.map((review) => (
                 <CarouselItem
@@ -64,8 +70,14 @@ const Review: React.FC = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-[#ffbf00] hover:bg-[#e6ac00] text-black border-[#ffbf00]" />
-            <CarouselNext className="bg-[#ffbf00] hover:bg-[#e6ac00] text-black border-[#ffbf00]" />
+            <CarouselPrevious
+              variant="ghost"
+              className="bg-[#ffbf00] hover:bg-[#e6ac00] text-black border-none shadow-md p-0 left-4 md:left-6"
+            />
+            <CarouselNext
+              variant="ghost"
+              className="bg-[#ffbf00] hover:bg-[#e6ac00] text-black border-none shadow-md p-0 right-4 md:right-6"
+            />
           </Carousel>
         </div>
       </div>

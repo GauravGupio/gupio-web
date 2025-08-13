@@ -82,10 +82,10 @@ export const Header: React.FC = () => {
       if (e.key === "Escape") setIsDropdownOpen(false);
     };
 
-    document.addEventListener("click", handleOutside);
+    document.addEventListener("pointerdown", handleOutside as any);
     document.addEventListener("keydown", handleEsc);
     return () => {
-      document.removeEventListener("click", handleOutside);
+      document.removeEventListener("pointerdown", handleOutside as any);
       document.removeEventListener("keydown", handleEsc);
     };
   }, [isDropdownOpen]);
@@ -94,8 +94,8 @@ export const Header: React.FC = () => {
     <>
       <section
         className={cn(
-          "hidden md:block py-2 bg-[#00021b] text-white transition-all duration-300 border-b-2 border-[#ffbf0050]",
-          hideTopbar && "opacity-0 h-0 p-0 m-0 overflow-hidden"
+          "hidden md:block py-2 bg-[#00021b] text-white border-b-2 border-[#ffbf0050] overflow-hidden transition-[max-height,opacity] duration-300",
+          hideTopbar ? "max-h-0 opacity-0" : "max-h-24"
         )}
       >
         <div className="max-w-7xl mx-auto px-4">
@@ -128,7 +128,7 @@ export const Header: React.FC = () => {
 
       <header
         className={cn(
-          "sticky top-0 left-0 right-0 z-50 bg-[#00021b] text-white transition-all duration-300 shadow-[0_0_5px_#1f2348]",
+          "sticky top-0 left-0 right-0 z-50 bg-[#00021b] text-white transition-all duration-300 shadow-[0_0_5px_#1f2348] transform-gpu",
           isFixed && "shadow-lg bg-[#00021b]/85 backdrop-blur"
         )}
       >
@@ -190,6 +190,7 @@ export const Header: React.FC = () => {
                 className="relative"
                 ref={dropdownRef}
                 onClick={(e) => e.stopPropagation()}
+                onPointerDown={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={(e) => {
