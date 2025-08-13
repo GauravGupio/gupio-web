@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import moment from "moment";
 
 // Components
 import MainBanner from "@/components/MainBanner";
@@ -41,9 +40,7 @@ const features = [
   "Smart space re-design for better flow",
 ];
 
-const SmartParkingService: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [dateTime, setDateTime] = useState<moment.Moment | string>("");
+const AdditionalParkingService: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -94,7 +91,6 @@ const SmartParkingService: React.FC = () => {
 
           {/* CTA */}
           <button
-            onClick={() => setModalOpen(true)}
             className="mt-4 bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-semibold px-7 py-3 rounded-lg shadow-lg transition"
           >
             Take a 7-day free Trial
@@ -137,14 +133,9 @@ const SmartParkingService: React.FC = () => {
       <TrustedClients />
 
       {/* Free Trial Modal */}
-      <FreeTrialModal
-        show={modalOpen}
-        onClose={() => setModalOpen(false)}
-        dateTime={dateTime}
-        setDateTime={setDateTime}
-      />
+      <FreeTrialModal/>
     </>
   );
 };
 
-export default SmartParkingService;
+export default AdditionalParkingService;

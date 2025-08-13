@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
 import MainBanner from "@/components/MainBanner";
 import TrustedClients from "@/components/TrustedClients";
 import FreeTrialModal from "@/components/FreeTrialModal";
@@ -22,8 +21,6 @@ const locations = [
 const cities = "Bengaluru, Pune, Hyderabad, Chennai, Kochi";
 
 const ValetParkingService: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [dateTime, setDateTime] = useState<moment.Moment | string>("");
 
   return (
     <div className="bg-[#00021a] min-h-screen">
@@ -113,7 +110,6 @@ const ValetParkingService: React.FC = () => {
 
           {/* CTA Button */}
           <button
-            onClick={() => setModalOpen(true)}
             className="mt-6 bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-3 rounded-lg shadow-lg transition"
           >
             Take a 7-day free Trial
